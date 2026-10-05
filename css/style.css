@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:ital,wght@0,500;1,900&display=swap");
+* {
+  font-family: "Poppins", cursive;
+}
+body {
+  color: azure;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.page-layout {
+  width: min(100%, 1200px);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 40px);
+}
+.illustration {
+  display: block;
+  width: clamp(150px, 24vw, 300px);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.message {
+  text-align: center;
+  flex: 0 1 auto;
+}
+.greetings {
+  font-size: 4rem;
+  font-weight: 900;
+}
+.greetings > span {
+  animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow {
+  0%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+  }
+  10%,
+  90% {
+    color: #111;
+    text-shadow: none;
+  }
+}
+.greetings > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.greetings > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.greetings > span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.greetings > span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.description {
+  display: inline-block;
+  padding: 8px 22px;
+  border: 1px solid rgb(255 182 223 / 55%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgb(255 143 199 / 18%), rgb(255 94 170 / 8%));
+  box-shadow: 0 0 22px rgb(255 94 170 / 16%), inset 0 0 14px rgb(255 182 223 / 8%);
+  color: #ffd6eb;
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgb(255 94 170 / 75%), 0 0 24px rgb(255 94 170 / 45%);
+}
+
+.button-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  border: 2px solid #ffb6df;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff8fc7, #ff5eaa);
+  box-shadow: 0 5px 0 #c83e84, 0 10px 24px rgb(255 94 170 / 35%);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 1px 2px rgb(120 26 76 / 35%);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+.button-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #c83e84, 0 14px 28px rgb(255 94 170 / 45%);
+  filter: brightness(1.08);
+}
+.button-link:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #c83e84, 0 5px 12px rgb(255 94 170 / 30%);
+}
+.button-link:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 5px;
+}
+
+@media screen and (max-width: 574px) {
+  .page-layout {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .illustration {
+    width: min(42vw, 180px);
+  }
+  .greetings {
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .description {
+    padding: 6px 16px;
+    font-size: 1rem;
+  }
+
+  .button-link {
+    min-height: 46px;
+    padding: 0 28px;
+    font-size: 1rem;
+  }
+}
